@@ -1,0 +1,17 @@
+{"session": "session_20260723_123055_94560990", "timestamp": "2026-07-23T07:00:55.158895Z", "level": "info", "event": "ChatIngestor initialized"}
+{"original": "E:\\My_Projects\\Intelligent-Document-Assistant-with-OCR-RAG\\data\\sample.png", "saved": "data\\session_20260723_123055_94560990\\sample_b02bb34d.png", "timestamp": "2026-07-23T07:00:55.161897Z", "level": "info", "event": "File saved"}
+{"original": "E:\\My_Projects\\Intelligent-Document-Assistant-with-OCR-RAG\\data\\Agentic_AI_RAG_Training.txt", "saved": "data\\session_20260723_123055_94560990\\agentic_ai_rag_training_fb689ea1.txt", "timestamp": "2026-07-23T07:00:55.162904Z", "level": "info", "event": "File saved"}
+{"total": 2, "timestamp": "2026-07-23T07:00:55.162904Z", "level": "info", "event": "Upload completed"}
+{"count": 2, "failed": 0, "timestamp": "2026-07-23T07:01:06.202982Z", "level": "info", "event": "Documents loaded"}
+{"documents": 2, "chunks": 24, "timestamp": "2026-07-23T07:01:06.233124Z", "level": "info", "event": "Documents split"}
+{"provider": "huggingface", "model": "sentence-transformers/all-MiniLM-L6-v2", "timestamp": "2026-07-23T07:01:06.233124Z", "level": "info", "event": "Loading embedding model"}
+{"documents": 24, "path": "faiss_index\\session_20260723_123055_94560990\\faiss_index", "timestamp": "2026-07-23T07:01:15.365860Z", "level": "info", "event": "Created FAISS index"}
+{"count": 24, "timestamp": "2026-07-23T07:01:15.529868Z", "level": "info", "event": "Added documents to FAISS"}
+{"search_type": "mmr", "timestamp": "2026-07-23T07:01:15.530852Z", "level": "info", "event": "Retriever created"}
+{"provider": "groq", "model": "llama-3.3-70b-versatile", "timestamp": "2026-07-23T07:01:15.532851Z", "level": "info", "event": "Loading LLM"}
+{"session_id": "session_20260723_123055_94560990", "timestamp": "2026-07-23T07:01:16.554917Z", "level": "info", "event": "ConversationalRAG initialized"}
+{"path": "faiss_index\\session_20260723_123055_94560990\\faiss_index", "timestamp": "2026-07-23T07:01:16.554917Z", "level": "info", "event": "Found FAISS index in subfolder"}
+{"provider": "huggingface", "model": "sentence-transformers/all-MiniLM-L6-v2", "timestamp": "2026-07-23T07:01:16.555934Z", "level": "info", "event": "Loading embedding model"}
+{"session_id": "session_20260723_123055_94560990", "timestamp": "2026-07-23T07:01:23.372519Z", "level": "info", "event": "LCEL chain built"}
+{"index_path": "faiss_index\\session_20260723_123055_94560990\\faiss_index", "search_type": "mmr", "timestamp": "2026-07-23T07:01:23.372519Z", "level": "info", "event": "FAISS retriever loaded"}
+{"session_id": "session_20260723_123055_94560990", "preview": "Agentic AI refers to AI systems that can plan, reason, use tools, and take actions to achieve user-defined goals with limited supervision. They have k", "timestamp": "2026-07-23T07:01:41.100893Z", "level": "info", "event": "Chain invoked"}

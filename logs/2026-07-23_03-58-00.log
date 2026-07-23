@@ -1,0 +1,13 @@
+{"session": "session_20260723_035803_22e8f9c5", "timestamp": "2026-07-22T22:28:03.056111Z", "level": "info", "event": "ChatIngestor initialized"}
+{"original": "E:\\My_Projects\\Intelligent-Document-Assistant-with-OCR-RAG\\data\\sample.png", "saved": "data\\session_20260723_035803_22e8f9c5\\sample_42901090.png", "timestamp": "2026-07-22T22:28:03.059417Z", "level": "info", "event": "File saved"}
+{"original": "E:\\My_Projects\\Intelligent-Document-Assistant-with-OCR-RAG\\data\\Agentic_AI_RAG_Training.txt", "saved": "data\\session_20260723_035803_22e8f9c5\\agentic_ai_rag_training_6a7e91d8.txt", "timestamp": "2026-07-22T22:28:03.060423Z", "level": "info", "event": "File saved"}
+{"total": 2, "timestamp": "2026-07-22T22:28:03.061424Z", "level": "info", "event": "Upload completed"}
+{"count": 2, "failed": 0, "timestamp": "2026-07-22T22:28:13.618079Z", "level": "info", "event": "Documents loaded"}
+{"documents": 2, "chunks": 24, "timestamp": "2026-07-22T22:28:13.645340Z", "level": "info", "event": "Documents split"}
+{"provider": "huggingface", "model": "sentence-transformers/all-MiniLM-L6-v2", "timestamp": "2026-07-22T22:28:13.646339Z", "level": "info", "event": "Loading embedding model"}
+{"documents": 24, "path": "faiss_index\\session_20260723_035803_22e8f9c5\\faiss_index", "timestamp": "2026-07-22T22:28:21.392207Z", "level": "info", "event": "Created FAISS index"}
+{"count": 24, "timestamp": "2026-07-22T22:28:21.548603Z", "level": "info", "event": "Added documents to FAISS"}
+{"search_type": "mmr", "timestamp": "2026-07-22T22:28:21.550108Z", "level": "info", "event": "Retriever created"}
+{"provider": "groq", "model": "llama-3.3-70b-versatile", "timestamp": "2026-07-22T22:28:21.551113Z", "level": "info", "event": "Loading LLM"}
+{"session_id": "session_20260723_035803_22e8f9c5", "timestamp": "2026-07-22T22:28:22.553733Z", "level": "info", "event": "ConversationalRAG initialized"}
+{"error": "FAISS index files not found in faiss_index\\session_20260723_035803_22e8f9c5. Looking for faiss_index\\session_20260723_035803_22e8f9c5\\faiss_index.faiss and faiss_index\\session_20260723_035803_22e8f9c5\\faiss_index.pkl", "timestamp": "2026-07-22T22:28:22.554734Z", "level": "error", "event": "Failed to load retriever"}

@@ -1,0 +1,7 @@
+{"session": "session_20260723_034752_3f70ee7a", "timestamp": "2026-07-22T22:17:52.472424Z", "level": "info", "event": "ChatIngestor initialized"}
+{"original": "E:\\My_Projects\\Intelligent-Document-Assistant-with-OCR-RAG\\data\\sample.png", "saved": "data\\session_20260723_034752_3f70ee7a\\sample_3e4b4fdd.png", "timestamp": "2026-07-22T22:17:52.476427Z", "level": "info", "event": "File saved"}
+{"original": "E:\\My_Projects\\Intelligent-Document-Assistant-with-OCR-RAG\\data\\Agentic_AI_RAG_Training.txt", "saved": "data\\session_20260723_034752_3f70ee7a\\agentic_ai_rag_training_a8a40ed8.txt", "timestamp": "2026-07-22T22:17:52.477435Z", "level": "info", "event": "File saved"}
+{"total": 2, "timestamp": "2026-07-22T22:17:52.477435Z", "level": "info", "event": "Upload completed"}
+{"count": 2, "failed": 0, "timestamp": "2026-07-22T22:18:01.422418Z", "level": "info", "event": "Documents loaded"}
+{"documents": 2, "chunks": 24, "timestamp": "2026-07-22T22:18:01.434420Z", "level": "info", "event": "Documents split"}
+{"error": "1 validation error for GoogleGenerativeAIEmbeddings\n  Value error, API key required for Gemini Developer API. Provide api_key parameter or set GOOGLE_API_KEY/GEMINI_API_KEY environment variable. [type=value_error, input_value={'model': 'models/text-em... 'google_api_key': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error", "timestamp": "2026-07-22T22:18:01.437422Z", "level": "error", "event": "Failed to build retriever"}

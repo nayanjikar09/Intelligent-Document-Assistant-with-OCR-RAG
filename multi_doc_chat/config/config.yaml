@@ -1,0 +1,19 @@
+embedding_model:
+  provider: "huggingface"
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+
+retriever:
+  search_type: "mmr"
+  top_k: 5
+  fetch_k: 20
+  lambda_mult: 0.5
+
+llm:
+  provider: "groq"
+  groq:
+    model_name: "llama-3.3-70b-versatile"
+    temperature: 0.0
+
+chunking:
+  chunk_size: 1000
+  chunk_overlap: 200
