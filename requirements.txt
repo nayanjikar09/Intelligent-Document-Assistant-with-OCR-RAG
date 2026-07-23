@@ -39,3 +39,4 @@ ipykernel>=6.20.0
 
 # LangSmith (Optional)
 langsmith>=0.1.0
+pandas

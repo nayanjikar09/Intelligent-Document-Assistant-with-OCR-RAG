@@ -1,0 +1,38 @@
+Agentic AI
+
+Agentic AI refers to AI systems that can plan, reason, use tools, and
+take actions to achieve user-defined goals with limited supervision.
+Unlike traditional AI models that simply respond to a single prompt,
+agentic systems break complex tasks into smaller steps, decide what
+information is needed, interact with external tools such as search
+engines, databases, or APIs, and adapt based on intermediate results.
+
+A typical Agentic AI workflow includes goal understanding, planning,
+tool selection, execution, observation, and refinement. Large Language
+Models (LLMs) often serve as the reasoning engine, while frameworks such
+as LangChain or LangGraph coordinate tool usage and memory.
+Retrieval-Augmented Generation (RAG) is commonly integrated so the agent
+can retrieve relevant information from a vector database before
+generating responses, reducing hallucinations and improving factual
+accuracy.
+
+Key components include: - Reasoning: deciding what to do next. - Memory:
+retaining useful context across steps. - Tools: calling APIs,
+calculators, databases, OCR systems, or web search. - Planning:
+decomposing large objectives into smaller tasks. - Reflection:
+evaluating outputs and correcting mistakes.
+
+Common applications include customer support, document assistants,
+research automation, coding assistants, workflow automation, and
+enterprise knowledge management.
+
+Challenges include hallucinations, tool failures, security risks,
+latency, and cost. Best practices include validating outputs, limiting
+permissions, logging actions, using human approval for high-risk
+operations, and grounding responses with trusted knowledge sources
+through RAG.
+
+Agentic AI is becoming an important direction in modern artificial
+intelligence because it combines language understanding with
+decision-making and real-world actions, enabling systems to solve
+multi-step problems more autonomously than traditional chatbots.

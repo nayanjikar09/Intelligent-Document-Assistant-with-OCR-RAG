@@ -1,0 +1,17 @@
+{"session": "session_20260723_223628_12265195", "timestamp": "2026-07-23T17:06:28.426220Z", "level": "info", "event": "ChatIngestor initialized"}
+{"original": "E:\\My_Projects\\Intelligent-Document-Assistant-with-OCR-RAG\\data\\sample.png", "saved": "data\\session_20260723_223628_12265195\\sample_69cbe245.png", "timestamp": "2026-07-23T17:06:28.430221Z", "level": "info", "event": "File saved"}
+{"original": "E:\\My_Projects\\Intelligent-Document-Assistant-with-OCR-RAG\\data\\Agentic_AI_RAG_Training.txt", "saved": "data\\session_20260723_223628_12265195\\agentic_ai_rag_training_6ccf3ee2.txt", "timestamp": "2026-07-23T17:06:28.431221Z", "level": "info", "event": "File saved"}
+{"total": 2, "timestamp": "2026-07-23T17:06:28.431221Z", "level": "info", "event": "Upload completed"}
+{"count": 2, "failed": 0, "timestamp": "2026-07-23T17:06:38.972942Z", "level": "info", "event": "Documents loaded"}
+{"documents": 2, "chunks": 24, "timestamp": "2026-07-23T17:06:38.998595Z", "level": "info", "event": "Documents split"}
+{"provider": "huggingface", "model": "sentence-transformers/all-MiniLM-L6-v2", "timestamp": "2026-07-23T17:06:38.999595Z", "level": "info", "event": "Loading embedding model"}
+{"documents": 24, "path": "faiss_index\\session_20260723_223628_12265195\\faiss_index", "timestamp": "2026-07-23T17:06:46.997628Z", "level": "info", "event": "Created FAISS index"}
+{"count": 24, "timestamp": "2026-07-23T17:06:47.151484Z", "level": "info", "event": "Added documents to FAISS"}
+{"search_type": "mmr", "timestamp": "2026-07-23T17:06:47.152492Z", "level": "info", "event": "Retriever created"}
+{"provider": "groq", "model": "llama-3.3-70b-versatile", "timestamp": "2026-07-23T17:06:47.154491Z", "level": "info", "event": "Loading LLM"}
+{"session_id": "session_20260723_223628_12265195", "timestamp": "2026-07-23T17:06:48.138578Z", "level": "info", "event": "ConversationalRAG initialized"}
+{"path": "faiss_index\\session_20260723_223628_12265195\\faiss_index", "timestamp": "2026-07-23T17:06:48.141579Z", "level": "info", "event": "Found FAISS index in subfolder"}
+{"provider": "huggingface", "model": "sentence-transformers/all-MiniLM-L6-v2", "timestamp": "2026-07-23T17:06:48.143093Z", "level": "info", "event": "Loading embedding model"}
+{"session_id": "session_20260723_223628_12265195", "timestamp": "2026-07-23T17:06:54.854590Z", "level": "info", "event": "LCEL chain built"}
+{"index_path": "faiss_index\\session_20260723_223628_12265195\\faiss_index", "search_type": "mmr", "timestamp": "2026-07-23T17:06:54.854590Z", "level": "info", "event": "FAISS retriever loaded"}
+{"session_id": "session_20260723_223628_12265195", "preview": "Hello. How can I assist you today?", "timestamp": "2026-07-23T17:07:25.761861Z", "level": "info", "event": "Chain invoked"}

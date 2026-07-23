@@ -8,6 +8,8 @@ from langchain_core.messages import BaseMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.vectorstores import FAISS
+from langchain_core.tracers import LangChainTracer
+from langchain_core.callbacks import StreamingStdOutCallbackHandler
 
 from multi_doc_chat.utils.model_loader import ModelLoader
 from multi_doc_chat.exception.custom_exception import DocumentPortalException
@@ -15,12 +17,20 @@ from multi_doc_chat.logger import GLOBAL_LOGGER as log
 
 
 class ConversationalRAG:
-    """LCEL-based Conversational RAG."""
+    """LCEL-based Conversational RAG with LangSmith tracing."""
     
     def __init__(self, session_id: Optional[str], retriever=None):
         try:
             self.session_id = session_id
             self.llm = ModelLoader().load_llm()
+            
+            # Setup LangSmith tracer
+            self.tracer = None
+            if os.getenv("LANGSMITH_TRACING", "false").lower() == "true":
+                self.tracer = LangChainTracer(
+                    project_name=os.getenv("LANGSMITH_PROJECT", "document-assistant-rag")
+                )
+                log.info("LangSmith tracer configured", session_id=session_id)
             
             # Prompts
             self.contextualize_prompt = ChatPromptTemplate.from_messages([
@@ -50,23 +60,19 @@ class ConversationalRAG:
                                    search_kwargs: Optional[Dict[str, Any]] = None):
         """Load FAISS retriever."""
         try:
-            # Convert to Path
             index_path = Path(index_path)
             
             if not index_path.exists():
                 raise FileNotFoundError(f"FAISS index directory not found: {index_path}")
             
-            # Check multiple possible locations for index files
-            # Location 1: index_path / index_name / index_name.faiss (subfolder)
+            # Check multiple possible locations
             index_subfolder = index_path / index_name
             index_file_1 = index_subfolder / f"{index_name}.faiss"
             pkl_file_1 = index_subfolder / f"{index_name}.pkl"
             
-            # Location 2: index_path / index_name.faiss (direct)
             index_file_2 = index_path / f"{index_name}.faiss"
             pkl_file_2 = index_path / f"{index_name}.pkl"
             
-            # Determine which path to use
             if index_file_1.exists() and pkl_file_1.exists():
                 load_path = index_subfolder
                 log.info("Found FAISS index in subfolder", path=str(load_path))
@@ -74,13 +80,10 @@ class ConversationalRAG:
                 load_path = index_path
                 log.info("Found FAISS index directly", path=str(load_path))
             else:
-                # List all files in directory for debugging
                 all_files = list(index_path.glob("*")) if index_path.exists() else []
                 raise FileNotFoundError(
                     f"FAISS index files not found in {index_path}.\n"
-                    f"Tried:\n"
-                    f"  - {index_file_1}\n"
-                    f"  - {index_file_2}\n"
+                    f"Tried:\n  - {index_file_1}\n  - {index_file_2}\n"
                     f"Files in directory: {[f.name for f in all_files]}"
                 )
             
@@ -109,13 +112,26 @@ class ConversationalRAG:
             raise DocumentPortalException(e)
 
     def invoke(self, user_input: str, chat_history: Optional[List[BaseMessage]] = None) -> str:
-        """Invoke the RAG chain."""
+        """Invoke the RAG chain with LangSmith tracing."""
         try:
             if self.chain is None:
                 raise DocumentPortalException("RAG chain not initialized. Call load_retriever_from_faiss() first.")
             
             chat_history = chat_history or []
-            answer = self.chain.invoke({"input": user_input, "chat_history": chat_history})
+            
+            # Add run name for better tracing
+            run_config = None
+            if self.tracer:
+                run_config = {
+                    "callbacks": [self.tracer],
+                    "run_name": f"RAG-Query-{self.session_id[:8]}"
+                }
+                log.debug("Using LangSmith tracer", run_name=f"RAG-Query-{self.session_id[:8]}")
+            
+            answer = self.chain.invoke(
+                {"input": user_input, "chat_history": chat_history},
+                config=run_config
+            )
             
             if not answer:
                 return "No answer generated."
@@ -131,7 +147,7 @@ class ConversationalRAG:
         return "\n\n".join(getattr(d, "page_content", str(d)) for d in docs)
 
     def _build_lcel_chain(self):
-        """Build the LCEL chain."""
+        """Build the LCEL chain with tracing."""
         try:
             if self.retriever is None:
                 raise DocumentPortalException("No retriever set")
