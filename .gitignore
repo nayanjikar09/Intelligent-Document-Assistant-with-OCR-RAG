@@ -12,3 +12,9 @@ venv/
 # Environment
 .env
 .env.local
+
+# Video files
+*.mp4
+*.mov
+*.avi
+*.mkv
