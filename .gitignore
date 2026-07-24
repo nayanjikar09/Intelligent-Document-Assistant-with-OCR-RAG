@@ -1,10 +1,4 @@
-# Large files
-*.mp4
-*.mov
-*.avi
-*.mkv
-*.zip
-*.tar.gz
+
 
 # Generated data
 faiss_index/
