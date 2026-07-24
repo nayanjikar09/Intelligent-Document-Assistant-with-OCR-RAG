@@ -1,0 +1,2 @@
+{"timestamp": "2026-07-24T00:57:19.813648Z", "level": "warning", "event": "PyPDF not found. Install with: pip install pypdf"}
+{"timestamp": "2026-07-24T00:57:19.814649Z", "level": "warning", "event": "PDFPlumber not installed. Install with: pip install pdfplumber"}

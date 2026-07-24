@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiDocChat - RAG Document Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>MultiDocChat</h1>
+            </div>
+            <p class="subtitle">Intelligent Document Assistant with OCR &amp; RAG</p>
+        </header>
+
+        <!-- Upload Section -->
+        <section id="upload-section" class="card">
+            <div class="section-header">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h2>Upload Documents</h2>
+            </div>
+            
+            <!-- File Selection Area -->
+            <div class="upload-area" id="upload-area">
+                <div class="upload-icon">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <p class="upload-text">Click to select files or drag &amp; drop</p>
+                <p class="supported-formats">
+                    <i class="fas fa-file-pdf"></i> PDF &nbsp;
+                    <i class="fas fa-file-word"></i> DOCX &nbsp;
+                    <i class="fas fa-file-alt"></i> TXT &nbsp;
+                    <i class="fas fa-image"></i> PNG/JPG &nbsp;
+                    <i class="fas fa-file-powerpoint"></i> PPTX
+                </p>
+                <input type="file" id="file-input" multiple accept=".pdf,.docx,.txt,.png,.jpg,.jpeg,.pptx,.csv,.xlsx,.xls,.md">
+                <button id="select-btn" class="btn-secondary">
+                    <i class="fas fa-folder-open"></i> Select Files
+                </button>
+            </div>
+
+            <!-- File List -->
+            <div id="file-list" class="file-list" style="display: none;">
+                <h4><i class="fas fa-list"></i> Selected Files</h4>
+                <ul id="selected-files"></ul>
+                <div class="file-actions">
+                    <button id="clear-btn" class="btn-danger">
+                        <i class="fas fa-times"></i> Clear All
+                    </button>
+                    <button id="upload-btn" class="btn-primary">
+                        <i class="fas fa-upload"></i> Upload Files
+                    </button>
+                </div>
+            </div>
+            
+            <!-- OCR Indicator -->
+            <div id="ocr-indicator" class="ocr-indicator" style="display: none;">
+                <i class="fas fa-eye"></i>
+                <span><strong>OCR Enabled:</strong> Images will be processed with OCR</span>
+            </div>
+
+            <!-- Notification Area (ChatGPT-style) -->
+            <div id="notification-container"></div>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="chat-section" class="card" style="display: none;">
+            <div class="section-header">
+                <i class="fas fa-comment-dots"></i>
+                <h2>Chat with Documents</h2>
+                <span id="session-badge" class="badge">Session: <span id="session-id">-</span></span>
+            </div>
+            
+            <div id="chat-container">
+                <div id="chat-messages">
+                    <div class="message assistant">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>👋 Welcome! Upload your documents and start asking questions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Ask a question about your documents..." disabled>
+                    <button id="send-btn" disabled>
+                        <i class="fas fa-paper-plane"></i> Send
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Session Info -->
+        <div id="session-info"></div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by <strong>LangChain</strong> • <strong>FAISS</strong> • <strong>Groq</strong></p>
+            <p class="footer-version">v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

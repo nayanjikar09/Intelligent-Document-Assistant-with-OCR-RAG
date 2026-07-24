@@ -30,7 +30,7 @@ dependencies = [
     "python-multipart>=0.0.6",
     "pandas>=2.0.0",
     "fastapi>=0.100.0",
-    "uvicor
+    "uvicorn>=0.32.1",
     "ipykernel>=6.20.0",
     "langsmith>=0.1.0",
 ]
@@ -38,4 +38,3 @@ dependencies = [
 [tool.setuptools.packages.find]
 include = ["multi_doc_chat*"]
 exclude = ["data*", "faiss_index*", "logs*", "notebook*", "test*"]
-index*", "logs*", "notebook*", "test*"]]test*"]

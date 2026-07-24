@@ -1,0 +1,17 @@
+{"timestamp": "2026-07-24T06:41:40.176918Z", "level": "info", "event": "\ud83d\udcf8 Image files detected - OCR will be used"}
+{"session": "session_20260724_121140_35b7a57f", "timestamp": "2026-07-24T06:41:40.183918Z", "level": "info", "event": "ChatIngestor initialized"}
+{"original": "1784788479.png", "saved": "data\\session_20260724_121140_35b7a57f\\1784788479_b09d1790.png", "timestamp": "2026-07-24T06:41:40.187906Z", "level": "info", "event": "File saved"}
+{"total": 1, "timestamp": "2026-07-24T06:41:40.187906Z", "level": "info", "event": "Upload completed"}
+{"count": 1, "failed": 0, "timestamp": "2026-07-24T06:41:42.243960Z", "level": "info", "event": "Documents loaded"}
+{"documents": 1, "chunks": 1, "timestamp": "2026-07-24T06:41:42.274028Z", "level": "info", "event": "Documents split"}
+{"provider": "huggingface", "model": "sentence-transformers/all-MiniLM-L6-v2", "timestamp": "2026-07-24T06:41:42.275029Z", "level": "info", "event": "Loading embedding model"}
+{"documents": 1, "path": "faiss_index\\session_20260724_121140_35b7a57f\\faiss_index", "timestamp": "2026-07-24T06:41:50.146647Z", "level": "info", "event": "Created FAISS index"}
+{"count": 1, "timestamp": "2026-07-24T06:41:50.161648Z", "level": "info", "event": "Added documents to FAISS"}
+{"search_type": "mmr", "timestamp": "2026-07-24T06:41:50.162652Z", "level": "info", "event": "Retriever created"}
+{"provider": "groq", "model": "llama-3.3-70b-versatile", "timestamp": "2026-07-24T06:42:04.004417Z", "level": "info", "event": "Loading LLM"}
+{"session_id": "session_20260724_121140_35b7a57f", "timestamp": "2026-07-24T06:42:06.157303Z", "level": "info", "event": "ConversationalRAG initialized"}
+{"path": "faiss_index\\session_20260724_121140_35b7a57f\\faiss_index", "timestamp": "2026-07-24T06:42:06.158313Z", "level": "info", "event": "Found FAISS index in subfolder"}
+{"provider": "huggingface", "model": "sentence-transformers/all-MiniLM-L6-v2", "timestamp": "2026-07-24T06:42:06.159310Z", "level": "info", "event": "Loading embedding model"}
+{"session_id": "session_20260724_121140_35b7a57f", "timestamp": "2026-07-24T06:42:12.643508Z", "level": "info", "event": "LCEL chain built"}
+{"index_path": "faiss_index\\session_20260724_121140_35b7a57f\\faiss_index", "search_type": "mmr", "timestamp": "2026-07-24T06:42:12.643508Z", "level": "info", "event": "FAISS retriever loaded"}
+{"session_id": "session_20260724_121140_35b7a57f", "preview": "It appears to be a logo or a sign for \"MSDNakshatura Makeup Studio & Academy\".", "timestamp": "2026-07-24T06:42:13.530513Z", "level": "info", "event": "Chain invoked"}

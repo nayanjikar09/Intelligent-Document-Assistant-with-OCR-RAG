@@ -1,0 +1,1 @@
+{"timestamp": "2026-07-24T06:18:23.572495Z", "level": "warning", "event": "pypdf not installed. PDF support may be limited. Install with: pip install pypdf"}

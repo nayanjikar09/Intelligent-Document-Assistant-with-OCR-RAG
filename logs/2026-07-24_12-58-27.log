@@ -1,0 +1,2 @@
+{"timestamp": "2026-07-24T07:28:28.040084Z", "level": "warning", "event": "No PDF library found. Install with: pip install pypdf"}
+{"timestamp": "2026-07-24T07:28:28.244925Z", "level": "info", "event": "RapidOCR loaded successfully"}
