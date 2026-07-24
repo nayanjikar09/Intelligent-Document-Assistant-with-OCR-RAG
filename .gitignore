@@ -1,9 +1,20 @@
+# Large files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.zip
+*.tar.gz
+
+# Generated data
+faiss_index/
+data/
+logs/
+
 # Virtual environment
 .venv/
+venv/
 
-# Environment variables
+# Environment
 .env
-
-# Python
-__pycache__/
-*.py[cod]
+.env.local
