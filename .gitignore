@@ -13,8 +13,8 @@ venv/
 .env
 .env.local
 
-# Video files
-*.mp4
-*.mov
-*.avi
-*.mkv
+# # Video files
+# *.mp4
+# *.mov
+# *.avi
+# *.mkv
